@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="page-header">
+    <h1>Como Iniciar a Minerarção</h1>
+  </div>
+  <p class="lead">Para iniciar a Mineração, É Preciso de um App Ex: Claymore ou ethminer
+  <br/><span class="label label-success">Links Para o Download:</span>  
+    <a href="https://github.com/ethereum-mining/ethminer/releases" rel="nofollow" target="_blank">ethminer</a>  
+    <a href="http://bitcointalk.org/index.php?topic=1433925.0" rel="nofollow" target="_blank">Claymore</a> 
+
+    <br/>
+  </p>
+
+  <dl class="dl-horizontal">
+    <dt>Seu Wallet</dt>
+    <dd>Este é o seu endereço para pagamentos, Gerado no ,<strong>Geth</strong> <strong>MyWebwallet</strong> ou se preferir uma <strong>Exchange</strong>.
+      <a href="https://wallet.pirl.io/#send-transaction" rel="nofollow" target="_blank">MyWebWallet</a>  
+      <a href="https://www.cryptopia.co.nz/" rel="nofollow" target="_blank">Cryptopia</a>
+      ou <a href="https://stocks.exchange/" rel="nofollow" target="_blank">stocks.exchange</a>.<br/>
+      <strong>Exemplo:</strong> <code>0xb85150eb365e7df0941f0cf08235f987ba91506a</code>.
+    </dd>
+    <dt>RIG_ID</dt>
+    <dd>
+      
+ID da sua farm para distingui-la da sua outra plataforma. Se você tem apenas um equipamento, sinta-se livre para omitir esta parametro.
+      
+Este parâmetro deve ser uma string alfanumérica curta com traços e sublinhados opcionais.<br/>
+      <strong>Exemplo:</strong> <code>rig-1</code>
+    </dd>
+  </dl>
+  <p>
+    <strong>Full Exemplo:</strong>
+    <code>ethminer.exe -S ip-ou-DNSdoservidor:porta -O 0xb85150eb365e7df0941f0cf08235f987ba91506a.myfarm -G</code> 
+    <br/>
+    O Exemplo do ethminer. a opção <code>-G</code> epara GPUS AMD, Para GPUS Nvidia a opção usada e <code>-U</code> Para Ambas as Plataformas deve-se usar <code>-X</code>
+    <br/>
+    <code>EthDcrMiner64.exe -epool stratum+tcp://Server-ip-ou-DNS:port -ewal Wallet -epsw x -eworker Rig-nome -allcoins 1 -allpools 1</code> .
+    <br/>
+    <span class="label label-info">Dica:</span> 
+Se você vai usar o ethminer do repositorio mais recente, use também
+      extra <code>--disable-submit-hashrate</code> opcional.
+  </p>
+<br/>
+<h4>Chat ALL</h4>
+<br/>
+<div>
+<iframe src="http://vircio.net/sala/ChatAll&estilo=lightblue&autoconectar=1&altura=400" frameborder="0" style="width: 700px; height: 400px;"></iframe>
+</div>
+
+  <h4>Aviso</h4>
+  <p>Não Minere Via CPU.</p>
+  <h4>Terms of Service</h4>
+  <p> .................
+  </p>
+</div>

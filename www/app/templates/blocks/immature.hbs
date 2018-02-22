@@ -1,0 +1,24 @@
+{{#if model.immature}}
+<h4>Blocos Imaturos</h4>
+
+<div class="table-responsive">
+  <table class="table table-condensed table-striped">
+    <thead>
+      <tr>
+        <th>Numero</th>
+        <th>Bloco Hash</th>
+        <th>Encontrado Em</th>
+        <th>Variação</th>
+        <th>Recompensa</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each model.immature as |block|}}
+        {{partial "blocks/block"}}
+      {{/each}}
+    </tbody>
+  </table>
+</div>
+{{else}}
+<h3>Ainda não há blocos imaturos</h3>
+{{/if}}

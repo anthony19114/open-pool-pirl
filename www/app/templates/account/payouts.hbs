@@ -1,0 +1,29 @@
+<div class="container">
+  {{#if model.payments}}
+  <h4>Os seus últimos pagamentos</h4>
+  <div class="table-responsive">
+    <table class="table table-condensed table-striped">
+      <thead>
+        <tr>
+          <th>Tempo</th>
+          <th>Tx ID</th>
+          <th>Quantidade</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each model.payments as |tx|}}
+          <tr>
+            <td>{{format-date-locale tx.timestamp}}</td>
+            <td>
+              <a href="https://explorer.pirl.io/#/address/{{tx.tx}}" class="hash" rel="nofollow" target="_blank">{{tx.tx}}</a>
+            </td>
+            <td>{{format-balance tx.amount}}</td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+  {{else}}
+  <h3>Ainda não há pagamentos</h3>
+  {{/if}}
+</div>

@@ -1,0 +1,26 @@
+<div class="jumbotron">
+  <div class="container">
+    <p class="lead">Pool sempre paga recompensa de blocos completos, incluindo taxas de TX e recompensas de Uncles.</p>
+    <strong>
+      A maturidade do bloco requer <u>até</u> </strong> <span class="label label-success">40</span> <strong>blocos.
+      Normalmente, é menos.
+    </strong>
+  </div>
+</div>
+<div class="container">
+  {{#if model.luck}}
+    {{partial "luck"}}
+  {{/if}}
+  <ul class="nav nav-tabs">
+    {{#active-li currentWhen='blocks.index' role='presentation'}}
+      {{#link-to 'blocks.index'}}Blocos <span class="badge alert-success">{{format-number model.maturedTotal}}</span>{{/link-to}}
+    {{/active-li}}
+    {{#active-li currentWhen='blocks.immature' role='presentation'}}
+      {{#link-to 'blocks.immature'}}Imaturos <span class="badge alert-success">{{format-number model.immatureTotal}}</span>{{/link-to}}
+    {{/active-li}}
+    {{#active-li currentWhen='blocks.pending' role='presentation'}}
+      {{#link-to 'blocks.pending'}}Novos Blocos <span class="badge alert-info">{{format-number model.candidatesTotal}}</span>{{/link-to}}
+    {{/active-li}}
+  </ul>
+  {{outlet}}
+</div>

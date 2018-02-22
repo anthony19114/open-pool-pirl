@@ -1,0 +1,61 @@
+<div class="jumbotron">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5">
+        <table border=0><tr><td valign=top><img src="./logo.png" border="0" height="60px"></td><td valign=top><h3>&nbsp;&nbsp;<b>Pirl</b></h3></td></tr></table><br/>
+        <strong>
+Limite mínimo de pagamento: {{config.PayoutThreshold}}</strong>, Os pagamentos são executados a cada 15Min<br/>
+        <span class="label label-success">PROP</span> Pagamentos Estáveis é Regulares.
+      </div>
+      <div class="col-md-3 stats">
+        <div><i class="fa fa-users"></i> Miners Online: <span id="poolHashrate">{{format-number stats.model.minersTotal}}</span></div>
+        <div><i class="fa fa-tachometer"></i> Pool Hashrate: <span id="poolHashrate">{{format-hashrate stats.model.hashrate}}</span></div>
+        <div><i class="fa fa-money"></i> Pool Fee: <span id="poolFee" class="label label-success">{{config.PoolFee}}</span></div>
+        {{#if stats.model.stats.lastBlockFound}}
+        <div><i class="fa fa-clock-o"></i> Último Bloco Encontrado: <span>{{format-relative (seconds-to-ms stats.model.stats.lastBlockFound)}}</span></div>
+        {{/if}}
+      </div>
+      <div class="col-md-4 stats">
+        <div><i class="fa fa-unlock-alt"></i> Dificuldade da Rede: <span>{{with-metric-prefix stats.difficulty}}</span></div>
+        <div><i class="fa fa-tachometer"></i> Rede Hash Rate: <span>{{format-hashrate stats.hashrate}}</span></div>
+        <div><i class="fa fa-bars"></i> Blocos da Rede: <span>{{format-number stats.height}}</span></div>
+        <div><i class="fa fa-clock-o"></i> Variação da Rodada: <span>{{format-number stats.roundVariance style='percent'}}</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="stats">
+    <h4>Suas estatísticas &amp; Histórico de pagamentos</h4>
+    <div class="input-group">
+      {{input value=cachedLogin class="form-control" placeholder="Insira seu Wallet"}}
+      <span class="input-group-btn">
+        <button class="btn btn-primary" type="button" {{action 'lookup' cachedLogin}}>
+          <span style="display: inline;"><i class="fa fa-search"></i> Buscar</span>
+        </button>
+      </span>
+    </div>
+  </div>
+  <div>
+    <hr/>
+    <h4 class="note note-info text-center">
+    <br/>
+    <span style="text-align: left;">Exemplos:</span>
+    <br/>
+      <strong>Ethminer Windows</strong>
+      <br/>
+      <code>ethminer.exe</code> <code>-S</code> Server-ip-ou-DNS:9601 <code>SP 1</code> <code>-O</code> wallet.worknome <code>-X</code> <br/>
+      <strong>Ethminer Linux</strong>
+      <br/>
+      <code>ethminer</code> <code>-S</code> Server-ip-ou-DNS:9601 <code>SP 1</code> <code>-O</code> wallet.worknome <code>-X</code> <br/><hr>
+
+      <strong>Claymore Windows</strong>
+      <br/>
+      <code>EthDcrMiner64.exe</code> <code>-epool</code> <code>stratum+tcp://</code>Server-ip-ou-DNS:9601 <code>-ewal</code> Wallet <code>-epsw x</code> <code>-eworker</code> Rig-nome <code>-allcoins 1</code> <code>-allpools 1</code><br/>
+      <strong>Claymore Linux</strong>
+      <br/>
+      <code>EthDcrMiner64</code> <code>-epool</code> <code>stratum+tcp://</code>Server-ip-ou-DNS:9601 <code>-ewal</code> Wallet <code>-epsw x</code> <code>-eworker</code> Rig-nome <code>-allcoins 1</code> <code>-allpools 1</code><br/>
+    </h4>
+  </div>
+</div>
